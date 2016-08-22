@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+    
+     <section class="no-padding" id="portfolio">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-9">
+                    <div class="row no-gutter">
+                         {% for lect in lecture %}
+                            <div class="col-md-4 col-sm-6 col-md-offset-14">
+                                 <a href="{{ lect.slug }}" class="portfolio-box">
+                                     <img src="{{ lect.book_cover.url }}" class="img-responsive coverImage" alt="books covers" style="width : 400 , height: 400 ">
+                                         <div class="portfolio-box-caption">
+                                             <div class="portfolio-box-caption-content">
+                                                 <div class="project-category text-faded">
+                                    
+                                                      {{ lect.title }}
+
+                                   
+                                                 </div>
+                                             <div class="project-name">
+                                    {{ lect.author }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>{% endfor %}
+            </div>
+                </div>
+                <div class="col-md-3">
+                {% include "sider.html" %}
+                    
+                </div>
+            </div>
+
+            <!-- pagination -->
+
+     <nav>
+       <ul class="pager">
+         <li>{% if lecture.has_previous %}<a href="?page={{ lecture.previous_page_number }}">Previous</a>{% endif %}</li>
+         <li>{% if lecture.has_next %}<a href="?page={{ lecture.next_page_number }}">Next</a>{% endif %}</li>
+       </ul>
+   </nav>            
+                
+           
+        </div>
+    </section>
+    
+
+
+
+
+{% endblock content %}

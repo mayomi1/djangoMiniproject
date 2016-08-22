@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+				<img src="{{ programming.book_cover.url }}" class="bookImage img-responsive img-rounded">
+				
+				<div class="panel panel-info" >
+					<div class="panel panel-heading">
+						<h2 class="panel panel-title">{{ programming.title }} by <span>{{ programming.author }}</span></h2>
+					</div>
+               			<div class="panel-body">
+                             <p>{{ programming.description }}</p>
+                             <p class="well well-sm"> <strong>{{ programming.title }}</strong> was uploaded by <b>{{ programming.user }}</b> on <em>{{ programming.date }}</em></p>
+               			 </div>
+                	<div class="panel-footer"><h3 class="label"><a href="{{ programming.book.url }}" target="_blank"><button class="btn btn-success">click here to download</button></h3></a></div>
+                </div>
+			
+		</div>
+		<div class="col-md-3"> 
+		    {% include "includecat.html" %}
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
