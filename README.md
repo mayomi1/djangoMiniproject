@@ -2,4 +2,4 @@
 
 
 
-this project is to reproduce nacoss bookshelf using django
+This project is to reproduce the NACOSS Django project developed by the department of Computer Science and Engineering of Obafemi Awolowo University
